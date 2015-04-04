@@ -3,44 +3,44 @@
   font-family: 'OctavaC';
   font-style: normal;
   font-weight: normal;
-  src: url('OctavaC.otf') format("opentype");
+  src: font-url('OctavaC.otf') format("opentype");
 }
 @font-face {
   font-family: 'OctavaC';
   font-style: normal;
   font-weight: bold;
-  src: url('OctavaCBold.otf') format("opentype");
+  src: font-url('OctavaCBold.otf') format("opentype");
 }
 @font-face {
   font-family: 'OctavaC';
   font-style: italic;
   font-weight: normal;
-  src: url('OctavaCIta.otf') format("opentype");
+  src: font-url('OctavaCIta.otf') format("opentype");
 }
 @font-face {
   font-family: 'OctavaC';
   font-style: italic;
   font-weight: bold;
-  src: url('OctavaCBoldIta.otf') format("opentype");
+  src: font-url('OctavaCBoldIta.otf') format("opentype");
 }
 // Шрифты для заголовков
 @font-face {
   font-family: 'OctavaSerifC';
   font-style: normal;
   font-weight: normal;
-  src: url('OctavaSerifC-Book.otf') format("opentype");
+  src: font-url('OctavaSerifC-Book.otf') format("opentype");
 }
 @font-face {
   font-family: 'OctavaSerifC';
   font-style: normal;
   font-weight: bold;
-  src: url('OctavaSerifC-Bold.otf') format("opentype");
+  src: font-url('OctavaSerifC-Bold.otf') format("opentype");
 }
 @font-face {
   font-family: 'OctavaSerifC';
   font-style: italic;
   font-weight: bold;
-  src: url('OctavaSerifC-BoldItalic.otf') format("opentype");
+  src: font-url('OctavaSerifC-BoldItalic.otf') format("opentype");
 }
 
 // Шрифты для выделенных фрагментов (черный текст на желтом фоне)
@@ -48,5 +48,5 @@
   font-family: 'OctavaSCC';
   font-style: normal;
   font-weight: normal;
-  src: url('OctavaSCC.otf') format("opentype");
+  src: font-url('OctavaSCC.otf') format("opentype");
 }
