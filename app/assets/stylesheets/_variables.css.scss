@@ -1,0 +1,50 @@
+$primary_color--white: white;
+$primary_color--black: black;
+$primary_color--beige: hsl(43, 42%, 88%);
+$primary_color--beige_hover: hsl(43, 41%, 82%);
+$primary_color--blue: hsl(215, 55%, 87%);
+
+$grid-gutter-width: 0px;
+
+
+/////////////////////////////////////////////
+//  Размеры экранов bootstrap (для информации)
+/////////////////////////////////////////////
+
+// $screen-xs:      480px;
+// $screen-xs-max:  767px;
+// $screen-sm:      768px;
+// $screen-sm-max:  991px;
+// $screen-md:      992px;
+// $screen-md-max:  1199px;
+// $screen-lg:      1200px;
+
+
+@mixin respond-to($val, $query) {
+  @media screen and ($val: $query) {
+    @content
+  }
+}
+
+
+//определение бордера
+@mixin border($side: "", $width: 1px, $color: $primary_color--black) {
+    border#{$side}: solid $width $color;
+}
+
+@mixin abs-stretch($side_padding: 0) {
+  position: absolute;
+  top: $side_padding;
+  bottom: $side_padding;
+  left: $side_padding;
+  right: $side_padding;
+}
+
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
