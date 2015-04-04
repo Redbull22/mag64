@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-4 content64__left flex_grow--1">
+        <div class="black_header">
+            <h2>
+                {{ cms:page:left_space.header:text }}
+            </h2>
+        </div>
+        <div class="row" style="padding-left: 20px; padding-right: 20px;">
+          <div class="col-lg-4 column_thumnail">
+            {{ cms:page_file:left_space.column1_image:image  }}
+            {{ cms:page:left_space.column1_text:rich_text }}
+          </div>
+          <div class="col-lg-4 column_thumnail">
+            {{ cms:page_file:left_space.column2_image:image  }}
+            {{ cms:page:left_space.column2_text:rich_text }}
+          </div>
+          <div class="col-lg-4 column_thumnail">
+            {{ cms:page_file:left_space.column3_image:image  }}
+            {{ cms:page:left_space.column3_text:rich_text }}
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-lg-4 content64__center">
+        {{ cms:page_file:center_space.cover:image  }}
+      </div>
+      <div class="col-xs-12 col-lg-4 content64__right flex_grow--1">
+        <div class="black_header text-right">
+            <h2>
+                {{ cms:page:right_space.header:text }}
+            </h2>
+        </div>
+        <div>
+            <div class="flex">
+                {{ cms:page_file:right_space.row1_image:image }}
+                {{ cms:page:right_space.row1_text:rich_text }}
+            </div>
+            <div class="black_header">
+                <h2>
+                    {{ cms:page:right_space.row_header1:text }}
+                </h2>
+            </div>
+            <div class="flex">
+                {{ cms:page:right_space.row2_text:rich_text }}
+                {{ cms:page_file:right_space.row2_image:image }}
+            </div>
+            <div class="black_header">
+                <h2>
+                  {{ cms:page:right_space.row_header2:text }}
+                </h2>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="conent64__bottom">
+        <ul class="row justify--sa align--center">
+            <li class="col-lg-2 flex_grow--1 right_border">
+                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+                    <div class="content64__bottom__link__number"> {{ cms:page:bottom_space.number1:integer }}</div>
+                    <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text1:string }}</div>
+                </a>
+            </li>
+            <li class="col-lg-2 flex_grow--1">
+                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+                    <div class="content64__bottom__link__number"> {{ cms:page:bottom_space.number2:integer }}</div>
+                    <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text2:string }}</div>
+                </a>
+            </li>
+            <li class="col-lg-4"></li>
+            <li class="col-lg-2 flex_grow--1 right_border">
+                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+                    <div class="content64__bottom__link__number">{{ cms:page:bottom_space.number3:integer }}</div>
+                    <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text3:text }}</div>
+                </a>
+            </li>
+            <li class="col-lg-2 flex_grow--1">
+                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+                    <div class="content64__bottom__link__number">{{ cms:page:bottom_space.number4:integer }}</div>
+                    <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text4:text }}</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer_64 flex">
+        <div class="content64__archive x_flex_grow--7 right_border">
+            <div class="black_header">
+                <h2>
+                    {{ cms:page:archive_space.header:text }}
+                </h2>
+            </div>
+            <div>
+                {{ cms:page_file:archive_space.cover_mini:image }}
+            </div>
+        </div>
+        <div class="content64__announcement x_flex_grow--3">
+            <div class="black_header">
+                <h2>
+                    {{ cms:page:announcement_space.header:text }}
+                </h2>
+            </div>
+            <div>
+                {{ cms:page:announcement_space.text:rich_text }}
+                {{ cms:page_file:announcement_space.image:image }}
+            </div>
+        </div>
+    </div>
+</div>
