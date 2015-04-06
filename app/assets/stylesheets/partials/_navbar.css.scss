@@ -1,0 +1,11 @@
+.navbar64__toggle {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  line-height: 0;
+  background-color: $primary_color--beige;
+  border: 1px solid hsla(0, 0%, 0%, 0);
+  svg {
+    height: 85px;
+  }
+}

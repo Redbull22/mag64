@@ -1,4 +1,5 @@
 @import "variables";
+@import "bootstrap-sprockets";
 @import "bootstrap-custom";
 @import "partials/**/*"; //импорт всего дерева папки partials
 
@@ -8,6 +9,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'OctavaSerifC', Georgia, serif;
+  margin: 0;
 }
 
 .fragment64 {
@@ -32,6 +34,9 @@ h2 {
   }
 }
 
+.navbar {
+  border-radius: 0;
+}
 .navbar64_logo {
   text-align: center;
   padding: 10px 0;
@@ -57,7 +62,6 @@ h2 {
 }
 
 .navbar_64__links {
-  height: 40px;
   margin: 0;
 
   li {border-right: 1px solid $primary_color--black;}
@@ -77,6 +81,7 @@ h2 {
 }
 
 .text_link_64 {
+  @include text-overflow();
   font-variant: small-caps;
   font-size: 22px;
   display: block;
@@ -84,6 +89,7 @@ h2 {
   line-height: 1.5;
   color: hsl(0, 0%, 30%);
   position: relative;
+  padding: 8px 16px;
   &:before {
     content: "";
     z-index: -1;
@@ -110,11 +116,22 @@ h2 {
 
 .content64__left, .content64__right {
   background-color: $primary_color--blue;
+  max-height: 100%;
+  height: 100%;
+}
+
+.content64__left__articles {
+  height: calc(100% - 42px);
+  max-height: 100%;
 }
 
 .content64__center {
   margin-bottom: -70px;
+  z-index: 5;
+  height: 100%;
   img {margin-top: -110px; width: 100%;}
+  padding: 0 10px;
+  background-color: hsl(0, 0%, 0%);
 }
 .conent64__bottom {
   @include border(-top);
@@ -146,28 +163,93 @@ h2 {
 }
 
 .black_header {
+  h2, h3 {
+    @include text-overflow();
+  }
   padding-left: 20px;
   padding-right: 20px;
   background-color: $primary_color--black;
   color: $primary_color--white;
   line-height: 1.5;
 }
+
 .column_thumnail {
-  padding-left: 10px;
-  padding-right: 10px;
-  img {min-width: 100%;  max-height: 200px;}
-  font-size: 18px;
+  padding: 0 20px;
+  height: 100%;
+  @include respond-to(min-width, $screen-sm) {
+    max-height: 100%;
+  }
+}
+.column_thumnail__image {
+  height: 100px;
+  width: 100px;
+  max-width: 100%;
+  margin: auto;
+  border: 1px #555 solid;
+  background-color: lightgray;
+  float: left;
+  @include respond-to(min-width, $screen-sm) {
+    float: none;
+    height: 150px;
+    width: 150px;
+  }
 }
 
+.column_thumnail__text {
+  font-size: 15px;
+  float: left;
+  width: calc(100% - 110px);
+  padding: 0 20px;
+  @include respond-to(min-width, $screen-sm) {
+    height: calc(100% - 150px);
+    overflow: hidden;
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+}
+.content64__right__articles {
+    margin-left: 20px;
+    height: calc(100% - 42px);
+}
+.content64__right__articles__top, .content64__right__articles__bottom {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .conent64__bottom__link {
+  display: block;
   font-size: 22px;
 }
-
+.content64__bottom__link__number {
+  display: inline-block;
+}
+.content64__bottom__link__text {
+  display: inline-block;
+  max-width: 60%;
+}
 .content64__archive {
   margin-right: 20px;
 }
+
+
+.content64__right__article__image {
+  height: 150px;
+}
+
+.content64__right__article__text {
+  max-height: 150px;
+  overflow: hidden;
+  padding: 5px 10px;
+}
+
 .flex {
   display: flex;
+}
+.flex--column {
+  display: flex;
+  flex-direction: column;
 }
 .flex_grow--1 {
   flex-basis: 0;

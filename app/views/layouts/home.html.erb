@@ -1,80 +1,89 @@
 <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-4 content64__left flex_grow--1">
+    <div class="js--content_height row">
+      <div class="col-xs-12 col-md-4 content64__left">
         <div class="black_header">
             <h2>
-                {{ cms:page:left_space.header:text }}
+                {{ cms:page:left_space.header:string }}
             </h2>
         </div>
-        <div class="row" style="padding-left: 20px; padding-right: 20px;">
-          <div class="col-lg-4 column_thumnail">
-            {{ cms:page_file:left_space.column1_image:image  }}
-            {{ cms:page:left_space.column1_text:rich_text }}
+        <div class="row content64__left__articles">
+          <div class="col-xs-12 col-md-6 column_thumnail">
+            <div class="column_thumnail__image">{{ cms:page_file:left_space.column1_image:image  }}</div>
+            <div class="js--truncate column_thumnail__text">{{ cms:page:left_space.column1_text:text }}</div>
           </div>
-          <div class="col-lg-4 column_thumnail">
-            {{ cms:page_file:left_space.column2_image:image  }}
-            {{ cms:page:left_space.column2_text:rich_text }}
-          </div>
-          <div class="col-lg-4 column_thumnail">
-            {{ cms:page_file:left_space.column3_image:image  }}
-            {{ cms:page:left_space.column3_text:rich_text }}
+          <div class="col-xs-12 col-md-6 column_thumnail">
+            <div class="column_thumnail__image">{{ cms:page_file:left_space.column2_image:image  }}</div>
+            <div class="js--truncate column_thumnail__text">{{ cms:page:left_space.column2_text:text }}</div>
           </div>
         </div>
       </div>
-      <div class="hidden-xs col-lg-4 content64__center">
+      <div class="hidden-xs hidden-sm col-md-4 content64__center">
+        <div id="js--content_represent" style="
+  background-color: hsl(0, 100%, 100%); display:none;"></div>
         {{ cms:page_file:center_space.cover:image  }}
       </div>
-      <div class="col-xs-12 col-lg-4 content64__right flex_grow--1">
+      <div class="col-xs-12 col-md-4 content64__right">
         <div class="black_header text-right">
             <h2>
-                {{ cms:page:right_space.header:text }}
+                {{ cms:page:right_space.header:string }}
             </h2>
         </div>
-        <div>
-            <div class="flex">
-                {{ cms:page_file:right_space.row1_image:image }}
-                {{ cms:page:right_space.row1_text:rich_text }}
+        <div class="content64__right__articles">
+            <div class="content64__right__articles__top">
+                <div class="row">
+                    <div class="col-xs-5 content64__right__article__image">
+                        {{ cms:page_file:right_space.row1_image:image }}
+                    </div>
+                    <div class="col-xs-7 content64__right__article__text">
+                        {{ cms:page:right_space.row1_text:rich_text }}
+                    </div>
+                </div>
+                <div class="black_header">
+                    <h3>
+                        {{ cms:page:right_space.row_header1:string }}
+                    </h3>
+                </div>
             </div>
-            <div class="black_header">
-                <h2>
-                    {{ cms:page:right_space.row_header1:text }}
-                </h2>
-            </div>
-            <div class="flex">
-                {{ cms:page:right_space.row2_text:rich_text }}
-                {{ cms:page_file:right_space.row2_image:image }}
-            </div>
-            <div class="black_header">
-                <h2>
-                  {{ cms:page:right_space.row_header2:text }}
-                </h2>
+            <div class="content64__right__articles__bottom">
+                <div class="row">
+                    <div class="col-xs-7 content64__right__article__text">
+                        {{ cms:page:right_space.row2_text:rich_text }}
+                    </div>
+                    <div class="col-xs-5 content64__right__article__image">
+                        {{ cms:page_file:right_space.row2_image:image }}
+                    </div>
+                </div>
+                <div class="black_header">
+                    <h3>
+                      {{ cms:page:right_space.row_header2:string }}
+                    </h3>
+                </div>
             </div>
         </div>
       </div>
     </div>
     <div class="conent64__bottom">
         <ul class="row justify--sa align--center">
-            <li class="col-lg-2 flex_grow--1 right_border">
-                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+            <li class="col-xs-3 right_border">
+                <a class="conent64__bottom__link" href="#">
                     <div class="content64__bottom__link__number"> {{ cms:page:bottom_space.number1:integer }}</div>
                     <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text1:string }}</div>
                 </a>
             </li>
-            <li class="col-lg-2 flex_grow--1">
-                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+            <li class="col-xs-3 right_border">
+                <a class="conent64__bottom__link" href="#">
                     <div class="content64__bottom__link__number"> {{ cms:page:bottom_space.number2:integer }}</div>
                     <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text2:string }}</div>
                 </a>
             </li>
-            <li class="col-lg-4"></li>
-            <li class="col-lg-2 flex_grow--1 right_border">
-                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+            <li class="col-xs-3 right_border">
+                <a class="conent64__bottom__link" href="#">
                     <div class="content64__bottom__link__number">{{ cms:page:bottom_space.number3:integer }}</div>
                     <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text3:text }}</div>
                 </a>
             </li>
-            <li class="col-lg-2 flex_grow--1">
-                <a class="conent64__bottom__link flex justify--center align--baseline" href="#">
+            <li class="col-xs-3">
+                <a class="conent64__bottom__link" href="#">
                     <div class="content64__bottom__link__number">{{ cms:page:bottom_space.number4:integer }}</div>
                     <div class="content64__bottom__link__text">{{ cms:page:bottom_space.text4:text }}</div>
                 </a>
@@ -85,7 +94,7 @@
         <div class="content64__archive x_flex_grow--7 right_border">
             <div class="black_header">
                 <h2>
-                    {{ cms:page:archive_space.header:text }}
+                    {{ cms:page:archive_space.header:string }}
                 </h2>
             </div>
             <div>
@@ -95,7 +104,7 @@
         <div class="content64__announcement x_flex_grow--3">
             <div class="black_header">
                 <h2>
-                    {{ cms:page:announcement_space.header:text }}
+                    {{ cms:page:announcement_space.header:string }}
                 </h2>
             </div>
             <div>

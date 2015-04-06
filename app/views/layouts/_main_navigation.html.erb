@@ -6,24 +6,38 @@
     </div>
     <div class="col-xs-6 text-right">Вход/Регистрация</div>
   </div>
-  <nav class="navbar_64 fragment64">
-    <div class="navbar_64__links row justify--sa align_center">
-      <div class="col-lg-4">
-        <div class="col-lg-4"><a class="text_link_64" href="#"><%= t('navigation.news') %></a></div>
-        <div class="col-lg-4"><a class="text_link_64" href="#"><%= t('navigation.subscribe') %></a></div>
-        <div class="col-lg-4"><a class="text_link_64" href="#"><%= t('navigation.oscar') %></a></div>
+  <nav class="navbar navbar_64 fragment64">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar64__toggle visible-xs collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <%= Icon64 'logo64' %>
+        </button>
       </div>
-      <div class="col-lg-4">
-        <div class="navbar64__links__logo">
-          <a href="/">
-            <div class="navbar64_logo__64"><%= Icon64 'logo64' %></div>
-          </a>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="nav">
+          <div class="navbar_64__links row justify--sa align_center">
+            <div class="col-xs-12 col-sm-4">
+              <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Новости</a></div>
+              <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Подписка</a></div>
+              <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Оскар</a></div>
+            </div>
+            <div class="col-sm-4 hidden-xs">
+              <div class="navbar64__links__logo">
+                <a href="/">
+                  <div class="navbar64_logo__64"><%= Icon64 'logo64' %></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Архив</a></div>
+              <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Фото-сток</a></div>
+              <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="/contacts">Контакты</a></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="col-lg-4"><a class="text_link_64" href="#"><%= t('navigation.archive') %></a></div>
-        <div class="col-lg-4"><a class="text_link_64" href="#"><%= t('navigation.photo_stock') %></a></div>
-        <div class="col-lg-4"><a class="text_link_64" href="/contacts"><%= t('navigation.contacts') %></a></div>
       </div>
     </div>
   </nav>
