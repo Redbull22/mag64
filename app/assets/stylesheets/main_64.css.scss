@@ -8,7 +8,7 @@ body {
   font-family: 'OctavaC', Georgia, serif;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'OctavaSerifC', Georgia, serif;
+  font-family: 'OfficinaSerifC', Georgia, serif;
   margin: 0;
 }
 
@@ -83,13 +83,23 @@ h2 {
 .text_link_64 {
   @include text-overflow();
   font-variant: small-caps;
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 8px 8px;
+  @include respond-to(min-width, $screen-md) {
+    font-size: 20px;
+    line-height: 1.6;
+    padding: 8px 8px;
+  }
+  @include respond-to(min-width, $screen-lg) {
+    font-size: 22px;
+    line-height: 1.5;
+    padding: 8px 16px;
+  }
   display: block;
   text-align: center;
-  line-height: 1.5;
   color: hsl(0, 0%, 30%);
   position: relative;
-  padding: 8px 16px;
   &:before {
     content: "";
     z-index: -1;
@@ -114,10 +124,20 @@ h2 {
   }
 }
 
-.content64__left, .content64__right {
+.js--content_height {
+  max-height: 600px;
+  background-color: hsl(215, 55%, 87%);
+}
+#js--content_represent {
+  overflow: auto;
+  max-height: 100%;
+}
+
+.content64 {
   background-color: $primary_color--blue;
   max-height: 100%;
   height: 100%;
+  font-size: 15px;
 }
 
 .content64__left__articles {
@@ -128,10 +148,39 @@ h2 {
 .content64__center {
   margin-bottom: -70px;
   z-index: 5;
+  @include respond-to(min-width, $screen-lg) {
+    min-height: 430px;
+  }
+  @include respond-to(min-width, 1600px) {
+    min-height: 510px;
+  }
   height: 100%;
-  img {margin-top: -110px; width: 100%;}
+  .content64__center__image {
+    position: relative;
+    margin-top: -110px;
+    width: 100%;
+    background-color: white;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
   padding: 0 10px;
   background-color: hsl(0, 0%, 0%);
+}
+
+.content64__center__represent_container {
+  background-color: hsl(0, 100%, 100%);
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  right: 20px;
+  bottom: 30px;
+  align-items: center;
+  border-top: 3px double hsl(0, 0%, 0%);
+  border-left: 1px solid hsl(0, 0%, 0%);
+  padding: 20px;
+  display:none;
 }
 .conent64__bottom {
   @include border(-top);
@@ -147,7 +196,7 @@ h2 {
     &:hover {
       background-color: hsl(43, 41%, 82%);
       transition: background-color 0.2s ease-in-out;
-      .content64__bottom__link__text {
+      .content64__bottom__link__header {
         border-bottom: 1px solid black;
 
       }
@@ -157,9 +206,12 @@ h2 {
 .content64__bottom__link__number {
   font-size: 80px;
 }
-.content64__bottom__link__text {
+.content64__bottom__link__header {
   border-bottom: 1px solid transparent;
   transition: border-bottom-color 0.2s ease-in-out;
+}
+.content64__bottom__link__text {
+  display: none;
 }
 
 .black_header {
@@ -174,22 +226,12 @@ h2 {
 }
 
 .column_thumnail {
-  padding: 0 20px;
+  padding: 10px 20px;
   height: 100%;
-  @include respond-to(min-width, $screen-sm) {
+  @include respond-to(min-width, $screen-md) {
     max-height: 100%;
   }
-  &:hover {
-      cursor: pointer;
-    .column_thumnail__text {
-      background-color: hsl(215, 55%, 89%);
-      border-radius: 10px;
-      box-shadow: 0 0 2px 2px hsl(215, 55%, 89%);
-      color: black;
-      transition: all 0.2s ease-in-out;
 
-    }
-  }
 }
 .column_thumnail__image {
   height: 100px;
@@ -199,7 +241,7 @@ h2 {
   border: 1px #555 solid;
   background-color: lightgray;
   float: left;
-  @include respond-to(min-width, $screen-sm) {
+  @include respond-to(min-width, $screen-md) {
     float: none;
     height: 150px;
     width: 150px;
@@ -207,19 +249,30 @@ h2 {
 }
 
 .column_thumnail__text {
-  font-size: 15px;
   float: left;
   width: calc(100% - 110px);
-  padding: 0 20px;
+  // padding: 0 20px;
   color: hsl(0, 0%, 20%);
   transition: all 0.2s ease-in-out;
+  height: 100px;
+  @include respond-to(min-width, $screen-md) {
+    height: 150px;
+  }
 
-  @include respond-to(min-width, $screen-sm) {
-    height: calc(100% - 150px);
+  @include respond-to(min-width, $screen-lg) {
+    height: 195px;
+  }
+  @include respond-to(min-width, 1600px) {
+    height: 285px;
+  }
+  @include respond-to(min-width, $screen-md) {
+    // height: calc(100% - 160px);
+
     overflow: hidden;
     float: none;
     width: 100%;
-    padding: 0;
+    // padding: 8px;
+    margin-top: 10px;
   }
 }
 .content64__right__articles {
@@ -239,23 +292,106 @@ h2 {
 .content64__bottom__link__number {
   display: inline-block;
 }
-.content64__bottom__link__text {
+.content64__bottom__link__header {
   display: inline-block;
   max-width: 60%;
 }
 .content64__archive {
-  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content64__announcement {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
 }
 
 
 .content64__right__article__image {
-  height: 150px;
+  @include respond-to(min-width, $screen-md) {
+    height: 125px;
+  }
+  @include respond-to(min-width, $screen-lg) {
+    height: 160px;
+  }
+  @include respond-to(min-width, 1600px) {
+    height: 200px;
+  }
 }
 
 .content64__right__article__text {
-  max-height: 150px;
+  max-height: 125px;
+  @include respond-to(min-width, $screen-lg) {
+    max-height: 150px;
+  }
   overflow: hidden;
-  padding: 5px 10px;
+  margin: 5px 10px;
+  align-self: flex-end;
+}
+
+.content64__archive__container {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.content64__archive__item {
+  position: relative;
+  font-family: 'OfficinaSerifC' !important;
+  &:before {
+    content: "№" attr(data-issue);
+    background-color: hsla(0, 0%, 0%, 0.75);
+    position: absolute;
+    color: hsl(0, 100%, 100%);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+    font-size: 175%;
+    padding-top: 40px;
+  }
+  &:after {
+    content: " " attr(data-year) " ";
+    background-color: hsl(0, 100%, 100%);
+    color: hsl(0, 0%, 0%);
+    position: absolute;
+    top: 70px;
+
+    line-height: 0.9;
+    font-size: 150%;
+    font-weight: bold;
+    margin: auto;
+    left: 28%;
+    opacity: 0;
+  }
+  &:hover {
+    &:before, &:after {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+  display: inline-block;
+  margin: 2px 20px;
+  cursor: pointer;
+  img{
+    height: 140px;
+    width: auto;
+  }
+}
+
+.blue_article_hover {
+  &:hover {
+      cursor: pointer;
+    .blue_article_hover__text {
+      background-color: hsl(215, 55%, 95%);
+      border-radius: 2px;
+      box-shadow: 0 0 2px 2px hsl(215, 55%, 89%);
+      color: black;
+      transition: all 0.2s ease-in-out;
+    }
+  }
 }
 
 .flex {
@@ -334,4 +470,86 @@ h2 {
   width: 100%;
   height: 100%;
   display: inline-block;
+}
+
+
+.papper_effect {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+.papper_effect:before, .papper_effect:after {
+  content: "";
+  height: 99%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.papper_effect:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  right: -5px;
+  top: 4px;
+  bottom: 3px;
+}
+.papper_effect:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  bottom: 2px;
+}
+
+.content64__center__represent_container__footer {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 10px;
+  font-family: 'OfficinaSerifC';
+  font-weight: bold;
+}
+
+.content64__center__represent_container__rubric {
+  position: absolute;
+  top: -23px;
+  left: -1px;
+  font-size: 12px;
+  font-family: 'OfficinaSerifC';
+  font-weight: bold;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 100%, 100%);
+  padding: 0px 40px;
+  line-height: 20px;
+}
+
+.relative {
+  position: relative;
+}
+
+.lang__toggle {
+  height: 30px;
+  width: 45px;
+  display: inline-block;
+  border: 1px solid hsl(0, 0%, 83%);
+  position: relative;
+  &:before {
+    opacity: 0;
+    content: attr(data-lang);
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    background-color: hsla(0, 100%, 100%, 0.85);
+    font-family: 'OfficinaSerifC', Georgia, serif;
+    font-weight: bold;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
 }

@@ -1,37 +1,35 @@
 <div class="container">
   <div class="row" style="padding: 10px 0;">
     <div class="col-xs-6" style="white-space: nowrap">
-      <a href="#"><div style="height: 30px; width: 45px; display: inline-block; border: 1px solid hsl(0, 0%, 83%);"><%= Icon64 'eng' %></div><span>English</span></a>
-      <a class="hidden" href="#"><div style="height: 30px; width: 45px; display: inline-block; border: 1px solid hsl(0, 0%, 83%);"><%= Icon64 'rus' %></div><span>Русский</span></a>
+      <a href="#"><div class="lang__toggle" data-lang="ENG"><%= Icon64 'eng' %></div></a>
+      <a class="hidden" href="#"><div style="height: 30px; width: 45px; display: inline-block; border: 1px solid hsl(0, 0%, 83%);"><%= Icon64 'rus' %></div><span>РУС</span></a>
     </div>
     <div class="col-xs-6 text-right">Вход/Регистрация</div>
   </div>
   <nav class="navbar navbar_64 fragment64">
     <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar64__toggle visible-xs collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <%= Icon64 'logo64' %>
         </button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <div class="nav">
           <div class="navbar_64__links row justify--sa align_center">
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-5 col-md-4">
               <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Новости</a></div>
               <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Подписка</a></div>
               <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Оскар</a></div>
             </div>
-            <div class="col-sm-4 hidden-xs">
+            <div class="col-sm-2 col-md-4 hidden-xs">
               <div class="navbar64__links__logo">
-                <a href="/">
+                <a href="/" onclick="truncateText()">
                   <div class="navbar64_logo__64"><%= Icon64 'logo64' %></div>
                 </a>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-5 col-md-4">
               <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Архив</a></div>
               <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="#">Фото-сток</a></div>
               <div class="col-xs-12 col-sm-4"><a class="text_link_64" href="/contacts">Контакты</a></div>
