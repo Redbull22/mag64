@@ -179,6 +179,17 @@ h2 {
   @include respond-to(min-width, $screen-sm) {
     max-height: 100%;
   }
+  &:hover {
+      cursor: pointer;
+    .column_thumnail__text {
+      background-color: hsl(215, 55%, 89%);
+      border-radius: 10px;
+      box-shadow: 0 0 2px 2px hsl(215, 55%, 89%);
+      color: black;
+      transition: all 0.2s ease-in-out;
+
+    }
+  }
 }
 .column_thumnail__image {
   height: 100px;
@@ -200,6 +211,9 @@ h2 {
   float: left;
   width: calc(100% - 110px);
   padding: 0 20px;
+  color: hsl(0, 0%, 20%);
+  transition: all 0.2s ease-in-out;
+
   @include respond-to(min-width, $screen-sm) {
     height: calc(100% - 150px);
     overflow: hidden;

@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   setContentHeight();
   $('.js--truncate').truncate({
-    token: '&hellip; <a href="#" onclick="showFullContent(this)">далее</a>',
+    token: '&hellip;',
     multiline: true,
     addfulltext: true
   });
